@@ -1,13 +1,17 @@
 package nauka.coming.dto;
 
 import com.sun.istack.NotNull;
+import nauka.coming.validation.PasswordMatches;
+import nauka.coming.validation.ValidEmail;
 
 import javax.validation.constraints.NotEmpty;
 
+@PasswordMatches
 public class UserDto {
 
     @NotNull
     @NotEmpty
+
     private String firstName;
 
     @NotNull
@@ -22,6 +26,7 @@ public class UserDto {
 
     @NotNull
     @NotEmpty
+    @ValidEmail
     private String email;
 
     public String getFirstName() {
