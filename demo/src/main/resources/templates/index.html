@@ -1,0 +1,17 @@
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default}" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+
+<main class="page landing-page" layout:fragment="content">
+    <section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/tech/image4.jpg&quot;);color:rgba(9, 162, 255, 0.85);">
+        <div class="text">
+            <h2 style="font-family: Akronim, cursive;">Regist and Play</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+            <a class="btn btn-outline-light btn-lg" role="button" style="width: 266px;height: 66px;margin: 2px;padding: 8px;font-family: Akronim, cursive;font-size: 33px;"
+               th:href="@{/registration}">Registration</a>
+            <a class="btn btn-outline-light btn-lg" role="button" style="width: 266px;height: 66px;margin: 2px;padding: 8px;font-family: Akronim, cursive;font-size: 33px;" th:href="@{/login}">Login</a></div>
+    </section>
+</main>
+
+</body>
+</html>
