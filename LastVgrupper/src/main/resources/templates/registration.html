@@ -3,8 +3,6 @@
       layout:decorate="~{default}" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Registration</title>
 
 </head>
@@ -17,38 +15,30 @@
                     <h2 class="text-info" style="font-family: Akronim, cursive;">Regist</h2>
                     <p style="font-family: Akronim, cursive;">Play and Run it!</p>
                 </div>
-                <form action="/" th:object="${user}" method="POST" enctype="utf8">
+                <form action="/register" method="post" enctype="utf8">
                     <div class="form-group">
-                        <label th:text="#label.user.firstName">Имя</label>
-                        <input th:field="*{firstName}" class="form-control" type="text"/>
-                        <p th:each="error: ${#field.errors('firstName')}"
-                           th:text="${error}">Validation error</p>
+                        <label>Имя</label>
+                        <input name="username" class="form-control" type="text"/>
                     </div>
                     <div class="form-group">
-                        <label th:text="#{label.user.lastName}">last</label>
-                        <input class="form-control" type="text"></div>
-                        <p th:each="error : ${#fields.errors('lastName')}"
-                           th:text="${error}">Validation error</p>
+                        <label>last</label>
+                        <input name="lastname" class="form-control" type="text"></div>
                     <div class="form-group">
-                        <label th:text="#{label.user.email}">Email</label>
-                        <input class="form-control" type="email"></div>
-                         <p th:each="error : ${#fields.errors('email')}"
-                            th:text="${error}">Validation error</p>
+                        <label>Email</label>
+                        <input name="email" class="form-control" type="email"></div>
+
                     <div class="form-group">
-                        <label th:text="#{label.user.password}">Пароль</label>
-                        <input class="form-control" type="password" th:field="*{password}"/>
-                        <p th:each="error : ${#fields.errors('password')}"
-                           th:text="${error}">Validation error</p>
+                        <label>Пароль</label>
+                        <input name="password" class="form-control" type="password" th:field="*{password}"/>
                     </div>
                     <div class="form-group"><label>Повторите пароль</label>
-                        <input class="form-control" type="text">
+                        <input name="confirmpassword" class="form-control" type="text">
                     </div>
 
 
                     <div class="form-group">
                         <button class="btn btn-primary btn-block" type="submit" style="font-family: Akronim, cursive;font-size: 20px;">Register</button></div>
                 </form>
-                <a th:href="@{/login.html}" th:text="#{label.form.loginLink}">login</a>
             </div>
         </section>
     </main>
